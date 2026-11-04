@@ -956,7 +956,7 @@
     // Technique Runner Wrapper
     function renderTechniqueRunner() {
       const tech = TECHNIQUES.find(function(t) { return t.id === APP_STATE.activeTechniqueId; });
-      if (!tech) return "<div class='text-center py-10'><button onclick='navigate("practice")' class='neo-btn px-4 py-2 bg-[#FFE500] rounded'>Back to Practice</button></div>";
+      if (!tech) return `<div class='text-center py-10'><button onclick="navigate('practice')" class='neo-btn px-4 py-2 bg-[#FFE500] rounded'>Back to Practice</button></div>`;
 
       if (APP_STATE.paperMode) {
         return renderPaperWorksheet(tech);
@@ -1998,7 +1998,7 @@
           saveState();
           alert("Backup successfully restored!");
           render();
-        }} catch (err) {
+        } catch (err) {
           alert("Invalid backup file: " + err.message);
         }
       };
